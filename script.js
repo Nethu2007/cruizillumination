@@ -61,7 +61,7 @@ const PRODUCTS = [
     available: 1,
     outOfStock: true,
     symbol: "HBD",
-    image: "",
+    image: "images/HBD.jpg",
     description: "A bright centrepiece for birthday photos and party décor.",
     featured: false
   },
@@ -97,8 +97,8 @@ const PRODUCTS = [
     available: 1,
     outOfStock: true,
     symbol: "FRAME",
-    image: "",
-    description: "A simple frame for event backdrops and styling.",
+    image: "images/partybox.jpg",
+    description: "A high quality music with Abans Party Box comes with 2 mics",
     featured: false
   }
 ];
