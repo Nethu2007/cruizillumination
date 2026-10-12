@@ -2,6 +2,23 @@
    CRUIZ ILLUMINATION — easy-to-edit styles
    Change the colour variables first to restyle the whole site.
    ========================================================= */
+/* Removes the mobile touch highlight rectangle */
+*,
+*::before,
+*::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Removes the blue focus/active outline when clicked */
+button:focus,
+button:active,
+a:focus,
+a:active,
+[role="button"]:focus,
+[role="button"]:active {
+  outline: none;
+  box-shadow: none;
+}
 
 :root {
   --ivory: #f8f5ef;
