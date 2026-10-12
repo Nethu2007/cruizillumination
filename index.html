@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ef">
+  <title>CRUIZ ILLUMINATION | Every Moment, Brighter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Cruiz Illumination home">
+      <span class="brand-mark">CI</span>
+      <span>
+        <strong>CRUIZ ILLUMINATION</strong>
+        <small>EVERY MOMENT, BRIGHTER.</small>
+      </span>
+    </a>
+
+    <button id="cart-open" class="cart-button" type="button">
+      Bag <span id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">EVENT LIGHTING · DECOR · RENTALS</p>
+      <h1>Make your moment<br><em>shine brighter.</em></h1>
+      <p class="hero-copy">
+        Statement letters, numbers and event lighting for moments worth celebrating.
+      </p>
+      <a class="button button-dark" href="#catalogue">Explore rentals</a>
+    </section>
+
+    <section id="catalogue" class="catalogue section-wrap">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>Find your finishing touch</h2>
+        </div>
+        <p class="muted">Rental prices are per item, per day.</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span class="sr-only">Search products</span>
+          <input id="search-input" type="search" placeholder="Search letters, numbers, lights…">
+        </label>
+
+        <label class="filter-label">
+          <span class="sr-only">Filter category</span>
+          <select id="category-filter">
+            <option value="all">All categories</option>
+          </select>
+        </label>
+
+        <label class="filter-label">
+          <span class="sr-only">Sort products</span>
+          <select id="sort-filter">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="product-grid" class="product-grid"></div>
+      <p id="empty-message" class="empty-message" hidden>No products match your search.</p>
+    </section>
+
+    <section class="how-it-works section-wrap">
+      <p class="eyebrow">SIMPLE BY DESIGN</p>
+      <h2>Choose. Celebrate. Return.</h2>
+      <div class="steps">
+        <article><span>01</span><h3>Choose your pieces</h3><p>Pick products and the quantity you need.</p></article>
+        <article><span>02</span><h3>Tell us the details</h3><p>Choose pickup or delivery and your rental dates.</p></article>
+        <article><span>03</span><h3>Confirm on WhatsApp</h3><p>We will check availability and confirm your booking.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="#">
+      <span class="brand-mark">CI</span>
+      <span><strong>CRUIZ ILLUMINATION</strong><small>EVERY MOMENT, BRIGHTER.</small></span>
+    </a>
+    <p>Beautiful details for memorable occasions.</p>
+  </footer>
+
+  <div id="product-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="icon-button modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div id="modal-art" class="modal-art"></div>
+      <div class="modal-content">
+        <p id="modal-category" class="eyebrow"></p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description" class="muted"></p>
+        <p id="modal-price" class="product-price"></p>
+        <p id="modal-stock" class="stock-note"></p>
+
+        <div class="field-row">
+          <label>Quantity
+            <input id="modal-quantity" type="number" min="1" value="1">
+          </label>
+          <label>Rental days
+            <input id="modal-days" type="number" min="1" value="1">
+          </label>
+        </div>
+
+        <p class="calculation">Estimated rental: <strong id="modal-total">LKR 0</strong></p>
+
+        <label class="field-label">Collection method
+          <select id="modal-fulfilment">
+            <option value="Pickup">Pickup</option>
+            <option value="Delivery">Delivery (fee confirmed on WhatsApp)</option>
+          </select>
+        </label>
+
+        <button id="add-to-cart" class="button button-dark full-width" type="button">Add to bag</button>
+        <button id="share-product" class="button button-light full-width" type="button">Share this product</button>
+        <p id="modal-feedback" class="form-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+  </div>
+
+  <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-cart></div>
+    <section class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <div class="drawer-heading">
+        <div><p class="eyebrow">YOUR SELECTION</p><h2 id="cart-title">Your bag</h2></div>
+        <button class="icon-button" type="button" data-close-cart aria-label="Close bag">×</button>
+      </div>
+
+      <div id="cart-items" class="cart-items"></div>
+      <p id="cart-empty" class="muted">Your bag is empty for now.</p>
+
+      <div class="cart-summary">
+        <p>Estimated rental total <strong id="cart-total">LKR 0</strong></p>
+        <p class="tiny muted">Delivery fees, security deposit and final availability are confirmed with us.</p>
+      </div>
+
+      <form id="checkout-form" class="checkout-form">
+        <h3>Booking details</h3>
+        <label>Your name <input id="customer-name" type="text" autocomplete="name" required></label>
+        <label>Phone number <input id="customer-phone" type="tel" autocomplete="tel" required></label>
+        <label>Event date <input id="event-date" type="date" required></label>
+        <label>Event venue / address <input id="event-venue" type="text" required></label>
+        <label>Extra notes <textarea id="event-notes" rows="3" placeholder="Event type, preferred delivery time, etc."></textarea></label>
+        <label>Preferred method
+          <select id="checkout-fulfilment">
+            <option value="Pickup">Pickup</option>
+            <option value="Delivery">Delivery</option>
+            <option value="Mixed / discuss">Mixed / discuss</option>
+          </select>
+        </label>
+
+        <button id="share-cart" class="button button-light full-width" type="button">Share finalized bag</button>
+        <button class="button button-gold full-width" type="submit">Proceed via WhatsApp</button>
+        <p class="tiny muted">No online payment. Press Send in WhatsApp to send your request. A booking is not confirmed until we reply.</p>
+      </form>
+    </section>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
