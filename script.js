@@ -7,7 +7,7 @@
    Sri Lanka example format: 94771234567
    Do not include +, spaces, brackets, or the leading 0.
 */
-const WHATSAPP_NUMBER = "947XXXXXXXX";
+const WHATSAPP_NUMBER = "94788009446";
 
 /* STEP 2: Edit products here.
    available = number you can rent at the same time.
@@ -84,6 +84,18 @@ const PRODUCTS = [
     pricePerDay: 3500,
     available: 1,
     outOfStock: false,
+    symbol: "FRAME",
+    image: "",
+    description: "A simple frame for event backdrops and styling.",
+    featured: false
+  },
+    {
+    id: "party-box",
+    name: "Bluetooth Party Box",
+    category: "Event Décor",
+    pricePerDay: 3500,
+    available: 1,
+    outOfStock: true,
     symbol: "FRAME",
     image: "",
     description: "A simple frame for event backdrops and styling.",
